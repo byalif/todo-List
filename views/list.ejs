@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.css">
+    <title>To do list</title>
+  </head>
+  <body>
+    <h1 id="okay">To do list</h1>
+   
+
+    <div class="container">
+      <form action="/" method="POST">
+        <input id="inputfield" type="text" name="todoVal" placeholder="Todo"><button type="submit" id="addToDo">+ </button>
+      </form><% toDo.forEach((data)=>{ %> 
+      <form id="form_id" action="/delete" method="POST">
+        <button id="remove" type="submit" name="checkbox" value="<%=data._id%>">X </button> <div id="dynamicCheck">
+                <button class="more" id='btn' value="<%=data._id%>" >done</button>
+                <input class="po" id="use" name="text" type="text" placeholder="update to-do">
+                <button class="no" id="okh" name="bt" value="<%=data._id%>">edit</button>
+         </div>
+        <p class="okay" id="<%=data._id%>"><%= data.todo %> </p>
+        <br>
+      </form><% }) %> <div class="to-dos" id="toDoContainer"></div>
+    </div>
+    <p id='test'></p>
+
+  </body>
+  <script src="main.js" type="text/JavaScript"></script>
+</html>
